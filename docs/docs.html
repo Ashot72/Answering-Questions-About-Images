@@ -1,0 +1,136 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink="#954F72" style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:22.0pt;line-height:107%'>Answering Questions About Images</span></p>
+
+<p class=MsoNormal><span style='font-size:22.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>This is a
+Node.js app where you can upload images, ask questions about images using voice
+prompts, then listen to the responses in voice.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><i><span style='font-size:14.0pt;color:black'>Voice to Text:</span></i><span
+style='font-size:14.0pt;color:black'>&nbsp;I turn an audio into text using
+Whisper&nbsp;<a href="https://openai.com/research/whisper" target="_blank"><span
+style='color:#0563C1'>https://openai.com/research/whisper</span></a>&nbsp;which
+is an OpenAI Speech Recognition Model that turns audio</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;color:black'>into text with up
+to 99% accuracy. Whisper is a speech transcription system form the creators of
+ChatGPT. Anyone can use it, and it is completely free.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;color:black'>The system is
+trained on 680 000 hours of speech data from the network and recognizes 99
+languages.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;color:black'>Generating
+Answers: We use <a href="https://replicate.com/andreasjansson/blip-2%20">https://replicate.com/andreasjansson/blip-2
+</a></span> <span style='font-size:14.0pt;color:black'>model that answers
+questions about images.</span></p>
+
+<p class=MsoNormal><i><span style='font-size:14.0pt;line-height:107%;
+color:black'>Text to Voice</span></i><span style='font-size:14.0pt;line-height:
+107%;color:black'><span style='font-variant-ligatures: normal;font-variant-caps: normal;
+orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-thickness: initial;text-decoration-style: initial;text-decoration-color: initial;
+word-spacing:0px'>: I use gTTS.js&nbsp;<a
+href="https://www.npmjs.com/package/gtts" target="_blank"><span
+style='color:#0563C1'>https://www.npmjs.com/package/gtts</span></a>&nbsp;which
+is&nbsp;<i>Google Text to Speech</i>&nbsp;JavaScript library originally written
+in Phyton.</span></span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1346 height=634 id="Picture 1"
+src="docs_files/image001.jpg"></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Figure 1</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%;color:black'>Once
+you record your voice prompt and click on the Save button, we upload the image,
+the app generates an .mp3 file, and Whisper extracts the text from the audio.</span></span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1355 height=516 id="Picture 2"
+src="docs_files/image002.jpg"></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%;color:black'>Figure
+2</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%;color:black'>We
+read the uploaded image, convert the buffer into a base64-encoded string, set the
+MIME type for PNG image, and then create the data URI to pass to the model.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%;color:black'>Once
+the output is generated, we create an audio file based on the output so the
+user can listen to the answer.</span></span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1017 height=565 id="Picture 3"
+src="docs_files/image003.png"></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%;color:black'>Figure
+4</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%;color:black'>You
+should set your OPENAI API key from <a
+href="https://platform.openai.com/account/api-keys" target="_blank">https://platform.openai.com/account/api-keys</a>
+and replicate key from  <a href="https://replicate.com/account/api-tokens"
+target="_blank">https://replicate.com/account/api-tokens</a> in the .env file.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>
