@@ -29,4 +29,4 @@ To get started.
 
 Go to [Answering Questions About Images Video](https://youtu.be/6w_F1GARGDQ) page
 
-Go to [Answering Questions About Images Description](https://ashot72.github.io/Answering-Questions-About-Images/doc.html) page
+Go to [Answering Questions About Images Description](https://ashot72.github.io/Answering-Questions-About-Images/docs.html) page
